@@ -1,0 +1,61 @@
+<div id="content" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8 panel panel-primary filterable table-wrapper-scroll-y">
+      <div class="panel-heading">
+        <h3 class="panel-title">Pipeline Detailed Report</h3>
+        <div class="pull-right">
+          <button id="btnExportToExcel" title="Export to Excel" onclick="ExportToExcel()" class="btn btn-default btn-xs btn-filter"><i class="fas fa-file-excel" style="color:green" aria-hidden="true"></i>
+          </button>
+          <button id="btnFilter" onclick="filterTable()" class="btn btn-default btn-xs btn-filter"><i class="fa fa-filter" aria-hidden="true"></i>
+            Filter</button>
+          </div>
+        </div>
+        <table id="detailedReportTable" class="table table-bordered table-hover table-responsive-sm table-light custom-table" data-toggle="table"
+        data-search="true"
+        data-filter-control="true"
+        data-show-export="true"
+        data-click-to-select="true"
+        data-toolbar="#toolbar">
+        <thead>
+          <tr  class="filters">
+            <th style="width: 10%">
+              <div onclick="sortTable(0)">Status</div>
+              <div><input type="text" class="form-control invisible"></div>
+            </th>
+            <th style="width: 3%">
+              <div onclick="sortTable(1)">#</div>
+            </th>
+            <th style="width: 9%">
+              <div onclick="sortTable(2)">TestCaseId</div>
+              <div><input type="text" class="form-control invisible"></div>
+            </th>
+            <th style="width: 60%">
+              <div onclick="sortTable(3)">TestCaseName</div>
+              <div><input type="text" class="form-control invisible"></div>
+            </th>
+            <th style="width: 8%">
+              <div onclick="sortTable(4)">Duration</div>
+            </th>
+            <th style="width: 12%">
+              <div onclick="sortTable(5)">MachineName</div>
+              <div><input type="text" class="form-control invisible"></div>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="vl col-sm-1"></div>
+    <div class="col-sm-3">
+      <div class="row">
+        <canvas id="doughnutChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h1>{{pipeline$.name}}</h1>
+  <ul>
+    <li><strong>Pipeline:</strong>{{ pipeline$.name }}</li>
+    <li><strong>Failed:</strong>{{ pipeline$.failed }}</li>
+    <li><strong>Passed:</strong>{{ pipeline$.passed }}</li>
+  </ul> -->

@@ -1,0 +1,88 @@
+<div id="content" class="container-fluid ">
+  <div class="form-group row">
+      <div class="col-md-3">
+          <label for="sel1">Select Report Category</label>
+          <select name="" id="sel1" class="form-control">
+              <option value="STF">STF</option>
+          </select>
+      </div>
+      <div class="col-md-3">
+          <label for="sel2">Select Report Category</label>
+          <select name="" id="sel2" class="form-control">
+              <option>Trading System</option>
+              <option>OFR</option>
+          </select>
+      </div>
+      <div class="col-md-3">
+          <label for="sel3">Select Report Category</label>
+          <select name="" id="sel3" class="form-control">
+              <option>FOC Functional</option>
+              <option>FOC Regression</option>
+              <option>CS Regression</option>
+          </select>
+      </div>
+      <button id="btnLoad" type="submit" class="btn btn-primary right" onclick="loadPipelines('../STF Reports/FOC Functional/Pipeline1 22112018')">Load</button>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col-sm-6">
+          <table class="table table-bordered table-hover table-responsive table-light">
+              <thead>
+                  <tr>
+                      <th>Pipeline</th>
+                      <th>Total Cases</th>
+                      <th>Passed</th>
+                      <th>Failed</th>
+                      <th>ReRun Attempts</th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th>Pipeline1</th>
+                      <th>500</th>
+                      <th>400</th>
+                      <th>100</th>
+                      <th>0</th>
+                      <th><button type="submit" class="btn-sm btn-info" onclick="loadPipelines('../TestResults.json')">ReRun</button></th>
+                      <th><button type="submit" class="btn-sm btn-info" onclick="loadDetailedReport('../TestResults.json')">Detailed Report</button></th>
+                  </tr>
+                  <tr>
+                      <th>Pipeline2</th>
+                      <th>500</th>
+                      <th>350</th>
+                      <th>150</th>
+                      <th>1</th>
+                      <th><button type="submit" class="btn-sm btn-info">ReRun</button></th>
+                      <th><button type="submit" class="btn-sm btn-info" onclick="loadDetailedReport('../TestResults.json')">Detailed Report</button></th>
+                  </tr>
+                  <tr>
+                      <th>Pipeline3</th>
+                      <th>500</th>
+                      <th>100</th>
+                      <th>280</th>
+                      <th>0</th>
+                      <th><button type="submit" class="btn-sm btn-info">ReRun</button></th>
+                      <th><button type="submit" class="btn-sm btn-info" onclick="loadDetailedReport('../TestResults.json')">Detailed Report</button></th>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <div class="vl col-sm-1"></div>
+      <div class="col-sm-5">
+          <div class="row">
+              <canvas id="doughnutChart"></canvas>
+          </div>
+      </div>
+  </div>
+  <div id="test" class="row"></div>
+</div>
+
+<!-- <h1>Users</h1>
+<ul>
+  <li *ngFor="let pipeline of pipelines$">
+    <a routerLink="/pipeline/{{pipeline.name}}">{{pipeline.name}}</a>
+  </li>
+</ul> -->
